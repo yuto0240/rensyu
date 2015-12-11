@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+	<html lang="ja">
+	<head>
+		<meta charset = "utf-8">
+		<title>レイアウトの練習</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+		<link rel="stylesheet" type="text/css" href="mycss.css">
+	</head>
+	<body>
+		<div id="container">
+			<h5>ようこそ！</h5><!-- スライドイン アニメーション-->
+
+			<div id="logo"><h4>くｺ：ミ</h4></div><!-- 常時場所固定-->
+
+			<div id="header"><h1><img src="sky.jpg"width="100%" height="100"></h1></div>
+
+
+			<div id="open">MENU</div>
+			<div id="menu">
+				<ul>
+					<li><a href="">ホーム</a></li>
+					<li><a href="">情報</a></li>
+					<li><a href="">活動</a></li>
+				</ul>
+			</div>
+
+			<div id="main">
+
+				<div id="contents">
+
+
+
+					<h2>見出し</h2>
+					<p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
+					<ul class="products">
+						<li>
+							<img src="sky.jpg" width="60" height="60;">
+							<p>説明です</p>
+						</li>
+						<li>	
+							<img src="sky.jpg" width="60" height="60;">
+							<p>説明です</p>
+						</li>
+						<li>	
+							<img src="sky.jpg" width="60" height="60;">
+							<p>説明です</p>
+						</li>
+
+						<div class="hoge">
+							<img src="sky.jpg" >
+						</div>
+
+						<div class="sample">
+							<span class="badge">new!</span>
+							<img src="sky.jpg" width="60" height="60">
+							<p>補足</p>
+						</div>		
+
+						<h2>見出し</h2>
+						<p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
+
+						<div id="naname">
+							NANAME
+						</div>
+
+
+					</div><!-- #contents -->
+
+					<div id="sidebar">
+						<h3>見出し</h3>
+						<p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
+						<h3>見出し</h3>
+						<p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
+						<ul class="submenu">
+							<li><a href="">menu1</a></li>
+							<li><a href="">menu2</a></li>
+							<li><a href="">menu3</a></li>
+						</ul>	
+					</div><!-- #sidebar--> 
+
+
+					<!-- スライドメニュー部分-->
+					<nav id="slide_menu">
+						<ul>
+							<li><a href="#">menu1</a></li>
+							<li><a href="#">menu2</a></li>
+							<li><a href="#">menu3</a></li>
+							<li><a href="#">menu4</a></li>
+							<li><a href="#">menu5</a></li>
+						</ul>
+					</nav>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+					<script>
+					$(function(){
+var menu = $('#slide_menu'), // スライドインするメニューを指定
+    menuBtn = $('#open'), // メニューボタンを指定
+    body = $(document.body),     
+    menuWidth = menu.outerWidth();                
+
+    // メニューボタンをクリックした時の動き
+    menuBtn.on('click', function(){
+    // body に open クラスを付与する
+    body.toggleClass('open');
+    if(body.hasClass('open')){
+            // open クラスが body についていたらメニューをスライドインする
+            body.animate({'left' : menuWidth }, 300);            
+            menu.animate({'left' : 0 }, 300);                    
+        } else {
+            // open クラスが body についていなかったらスライドアウトする
+            menu.animate({'left' : -menuWidth }, 300);
+            body.animate({'left' : 0 }, 300);            
+        }             
+    });
+});    
+					</script>
+
+				</div><!-- #container -->
+				<div id="footer">Copyright 2015, yuto.com</div>
+
+			</body>
+			</html>
